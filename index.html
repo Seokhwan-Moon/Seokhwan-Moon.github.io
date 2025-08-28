@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Redirecting…</title>
+  <!-- JS가 꺼진 브라우저용 즉시 메타 리프레시 (1초 여유) -->
+  <meta http-equiv="refresh" content="1; url=https://people.math.wisc.edu/~moon64/">
+  <!-- SEO: 새 주소를 정본으로 알리기 -->
+  <link rel="canonical" href="https://people.math.wisc.edu/~moon64/">
+  <meta name="robots" content="noindex">
+  <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;padding:2rem}</style>
+</head>
+<body>
+  <p>Redirecting to <a id="dest" href="https://people.math.wisc.edu/~moon64/">https://people.math.wisc.edu/~moon64/</a> …</p>
+  <script>
+    (function () {
+      var NEW_BASE = "https://people.math.wisc.edu/~moon64";
+      // 경로 + 쿼리 + 해시 보존
+      var path   = location.pathname.replace(/\/+$/, ""); // 뒤 슬래시 정리
+      var search = location.search || "";
+      var hash   = location.hash   || "";
+      // GitHub Pages 루트('/')일 때는 그대로, 하위 경로는 그대로 붙여줌
+      var target = NEW_BASE + (path ? path : "/") + search + hash;
+      // 예: /cv -> https://people.math.wisc.edu/~moon64/cv
+      document.getElementById("dest").href = target;
+      document.getElementById("dest").textContent = target;
+      location.replace(target); // 히스토리 오염 없이 즉시 이동
+    })();
+  </script>
+  <noscript>
+    If you are not redirected automatically, follow the link above.
+  </noscript>
+</body>
+</html>
